@@ -16,13 +16,12 @@
 
 package com.example.android.codelabs.paging.db
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.android.codelabs.paging.model.Repo
-import javax.sql.DataSource
+import androidx.paging.DataSource
 
 /**
  * Room data access object for accessing the [Repo] table.

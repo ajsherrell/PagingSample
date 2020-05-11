@@ -20,7 +20,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.android.codelabs.paging.model.Repo
 import java.util.concurrent.Executor
-import javax.sql.DataSource
+import androidx.paging.DataSource
 
 /**
  * Class that handles the DAO local data source. This ensures that methods are triggered on the
