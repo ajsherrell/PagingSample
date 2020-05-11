@@ -20,6 +20,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.android.codelabs.paging.model.Repo
 import java.util.concurrent.Executor
+import javax.sql.DataSource
 
 /**
  * Class that handles the DAO local data source. This ensures that methods are triggered on the
@@ -47,7 +48,7 @@ class GithubLocalCache(
      * any characters between the words.
      * @param name repository name
      */
-    fun reposByName(name: String): LiveData<List<Repo>> {
+    fun reposByName(name: String): DataSource.Factory<Int, Repo> {
         // appending '%' so we can allow other characters to be before and after the query string
         val query = "%${name.replace(' ', '%')}%"
         return repoDao.reposByName(query)

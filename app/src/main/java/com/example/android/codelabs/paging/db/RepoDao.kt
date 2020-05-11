@@ -22,6 +22,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.android.codelabs.paging.model.Repo
+import javax.sql.DataSource
 
 /**
  * Room data access object for accessing the [Repo] table.
@@ -37,5 +38,5 @@ interface RepoDao {
     // and order those results descending, by the number of stars and then by name
     @Query("SELECT * FROM repos WHERE (name LIKE :queryString) OR (description LIKE " +
             ":queryString) ORDER BY stars DESC, name ASC")
-    fun reposByName(queryString: String): LiveData<List<Repo>>
+    fun reposByName(queryString: String): DataSource.Factory<Int, Repo>
 }
